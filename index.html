@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+    <script>
+      function findNearbyParking() {
+    alert('Finding nearby parking spots...');
+    // Here you can integrate Google Maps API or another API to find and suggest nearby parking.
+}
+
+function viewPlans() {
+    alert('Here are the available parking plans:\n1 Hour: $5\n2 Hours: $9\n24 Hours: $20\nWeekly: $60\nMonthly: $200');
+}
+
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Parking spot booked successfully!');
+    // Implement booking logic here
+});
+
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Payment processed successfully!');
+    // Implement payment logic here
+});
+
+      document.getElementById('findParkingForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form from submitting the traditional way
+
+          // Show searching message
+          document.getElementById('searchingMessage').style.display = 'block';
+          document.getElementById('resultsMessage').style.display = 'none';
+          document.getElementById('resultsList').innerHTML = '';
+          document.getElementById('resultsContainer').style.display = 'block';
+
+          // Simulate an API call with a timeout
+          setTimeout(function() {
+              // Hide searching message
+              document.getElementById('searchingMessage').style.display = 'none';
+
+              // Simulate found results
+              const results = [
+                  'Parking Station A - 1 km away',
+                  'Parking Station B - 1.5 km away',
+                  'Parking Station C - 2 km away'
+              ];
+
+              // Display results
+              const resultsList = document.getElementById('resultsList');
+              results.forEach(result => {
+                  const listItem = document.createElement('li');
+                  listItem.textContent = result;
+                  resultsList.appendChild(listItem);
+              });
+              document.getElementById('resultsMessage').style.display = 'block';
+          }, 2000); // Simulating 2 seconds delay for the search
+      });
+  </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./WhatsApp Image 2024-08-08 at 10.56.16 PM.jpeg"
+            class="rbk-logo"
+          />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link active" id="navItem1" href="#wcuSection">
+              Why Choose Us?
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="#exploreMenuSection" id="navItem2">Explore More</a>
+            <a class="nav-link" href="#findParkingSection" id="navItem3"> Find Parking </a>
+            <a class="nav-link" href="#bookingSection" id="navItem3"> Booking slot </a>
+            <a class="nav-link" href="#cardPaymentSection" id="navItem3">Payment</a>
+            
+            <a class="nav-link" href="#followUsSection" id="navItem4">Follow Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+     
+    </div>
+    <div class="wcu-section pt-5 pb-5" id="wcuSection">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <h1 class="wcu-section-heading">Why Choose Our Smart Parking System?</h1>
+                  <p class="wcu-section-description">
+                      Experience hassle-free parking with our state-of-the-art smart parking system. Our innovative solutions are designed to make parking more efficient and convenient.
+                  </p>
+              </div>
+              <div class="col-12 col-md-4">
+                  <div class="wcu-card p-3 mb-3">
+                      <img src="./WhatsApp Image 2024-08-08 at 11.05.52 PM.jpeg" class="wcu-card-image" alt="Advanced Technology"/>
+                      <h1 class="wcu-card-title mt-3">Advanced Technology</h1>
+                      <p class="wcu-card-description">
+                          Our system utilizes cutting-edge technology, including wireless sensors, AI-based navigation, and real-time parking availability. This ensures accurate and efficient parking solutions, providing you with a seamless experience every time.
+                      </p>
+                  </div>
+              </div>
+              <div class="col-12 col-md-4">
+                  <div class="wcu-card p-3 mb-3">
+                      <img src="./WhatsApp Image 2024-08-08 at 11.10.13 PM.jpeg" class="wcu-card-image" alt="Real-Time Monitoring"/>
+                      <h1 class="wcu-card-title mt-3">Real-Time Monitoring</h1>
+                      <p class="wcu-card-description">
+                          Our system offers real-time monitoring for parking availability and usage. Whether you're a user or an owner, you'll have access to up-to-date information to help you make informed decisions and optimize parking efficiency.
+                      </p>
+                  </div>
+              </div>
+              <div class="col-12 col-md-4">
+                  <div class="wcu-card p-3 mb-3">
+                      <img src="./WhatsApp Image 2024-08-08 at 11.11.46 PM.jpeg" class="wcu-card-image" alt="User-Friendly Interface"/>
+                      <h1 class="wcu-card-title mt-3">User-Friendly Interface</h1>
+                      <p class="wcu-card-description">
+                          Our system is designed with ease of use in mind. The intuitive interface for both users and owners ensures a smooth experience from booking to payment. Enjoy a streamlined process with minimal hassle, thanks to our user-centric design.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="menu-section-heading">Explore Our Smart Parking System</h1>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="./WhatsApp Image 2024-08-08 at 11.14.26 PM.jpeg"
+                        class="menu-item-image w-100"
+                        alt="Real-Time Availability"
+                    />
+                    <h1 class="menu-card-title">Real-Time Availability</h1>
+                    <a href="" class="menu-item-link">
+                        View All
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#0034d0" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="./WhatsApp Image 2024-08-08 at 11.15.12 PM.jpeg"
+                        class="menu-item-image w-100"
+                        alt="Secure Payment Integration"
+                    />
+                    <h1 class="menu-card-title">Secure Payment Integration</h1>
+                    <a href="" class="menu-item-link">
+                        View All
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#0034d0" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="menu-item-card shadow p-3 mb-3">
+                    <img
+                        src="./WhatsApp Image 2024-08-08 at 11.17.13 PM.jpeg"
+                        class="menu-item-image w-100"
+                        alt="AI-Based Indoor Navigation"
+                    />
+                    <h1 class="menu-card-title">AI-Based Indoor Navigation</h1>
+                    <a href="" class="menu-item-link">
+                        View All
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#0034d0" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="menu-item-card shadow p-3 mb-3">
+                    <img
+                        src="./WhatsApp Image 2024-08-08 at 11.18.24 PM.jpeg"
+                        class="menu-item-image w-100"
+                        alt="Owner Dashboard"
+                    />
+                    <h1 class="menu-card-title">Owner Dashboard</h1>
+                    <a href="" class="menu-item-link">
+                        View All
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#0034d0" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="menu-item-card shadow p-3 mb-3">
+                    <img
+                        src="./WhatsApp Image 2024-08-08 at 11.20.41 PM.jpeg"
+                        class="menu-item-image w-100"
+                        alt="QR Code Gate Access"
+                    />
+                    <h1 class="menu-card-title">QR Code Gate Access</h1>
+                    <a href="" class="menu-item-link">
+                        View All
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#0034d0" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="menu-item-card shadow p-3 mb-3">
+                    <img
+                        src="./WhatsApp Image 2024-08-08 at 11.21.00 PM.jpeg"
+                        class="menu-item-image w-100"
+                        alt="Virtual Rewards System"
+                    />
+                    <h1 class="menu-card-title">Virtual Rewards System</h1>
+                    <a href="" class="menu-item-link">
+                        View All
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#0034d0" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+</div>
+<div class="find-parking-section pt-5 pb-5" id="findParkingSection">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h1 class="find-parking-section-heading">Find Nearby Parking Stations</h1>
+              <p class="find-parking-section-description">
+                  Locate the nearest parking stations with ease using our smart parking system. Our advanced technology helps you find available parking spots quickly and efficiently.
+              </p>
+          </div>
+          <div class="col-12">
+              <div class="find-parking-form-container p-3 mb-3">
+                  <form id="findParkingForm">
+                      <label for="currentLocation">Current Location:</label>
+                      <input type="text" id="currentLocation" name="currentLocation" placeholder="Enter your current location" required>
+                      
+                      <label for="radius">Search Radius:</label>
+                      <input type="number" id="radius" name="radius" placeholder="Enter radius in km" required>
+                      <button onclick="findNearbyParking()">Find Nearby Parking</button>
+  <button onclick="viewPlans()">View Plans</button>
+                      
+                  </form>
+              </div>
+          </div>
+          <div class="col-12">
+              <div class="results-container" id="resultsContainer" style="display: none;">
+                  <p id="searchingMessage">Searching nearby...</p>
+                  <p id="resultsMessage" style="display: none;">Found the following parking stations:</p>
+                  <ul id="resultsList"></ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="booking-section pt-5 pb-5" id="bookingSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="booking-section-heading">Book Your Parking Spot</h1>
+                <p class="booking-section-description">
+                    Reserve your parking spot quickly and easily using our online booking form. Choose your location, date, and time to ensure a hassle-free experience.
+                </p>
+            </div>
+            <div class="col-12">
+                <div class="booking-form-container p-3 mb-3">
+                    <form id="bookingForm">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" placeholder="Enter location" required>
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                        <label for="time">Time:</label>
+                        <input type="time" id="time" name="time" required>
+                        <button type="submit" class="custom-button">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+  
+<div class="card-online-payment-section pt-5 pb-5" id="cardPaymentSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-5 order-1 order-md-2">
+        <div class="text-center">
+          <img src="./images/delivery-payment-section-img.png" class="payment-secure-img w-100" />
+        </div>
+      </div>
+      <div class="col-12 col-md-7 order-2 order-md-1">
+        <h1 class="card-online-payment-section-heading">
+          Secure Online Card Payment
+        </h1>
+        <p class="card-online-payment-section-description">
+          Make your payment with ease using our secure online card payment system. Choose from a variety of card options and enjoy a seamless transaction experience. Make payments anytime, anywhere, with the assurance of secure processing.
+        </p>
+        <button class="custom-button" onclick="document.getElementById('paymentFormSection').style.display = 'block';">Pay with Card</button>
+        <div class="mt-3">
+          <img src="./images/visa-card-img.png" class="payment-card-img" />
+          <img src="./images/master-card-img.png" class="payment-card-img" />
+          <img src="./images/paypal-card-img.png" class="payment-card-img" />
+          <img src="./images/american-express-img.png" class="payment-card-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Form Section -->
+<section id="paymentFormSection" style="display: none;">
+  <div class="container">
+    <h2>Make Payment</h2>
+    <form id="paymentForm">
+      <label for="cardNumber">Card Number:</label>
+      <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+      
+      <label for="expiryDate">Expiry Date:</label>
+      <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+      
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+      
+      <button type="submit" class="custom-button">Pay Now</button>
+    </form>
+  </div>
+</section>
+
+<div class="coupon-feature-section pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+        <h1 class="coupon-feature-section-heading">
+          Avail Free Slot Booking with Exclusive Coupons
+        </h1>
+        <p class="coupon-feature-section-description">
+          Book your slots for various activities without any charges using our exclusive discount coupons. Redeem your coupons today and enjoy the benefits.
+        </p>
+        <div class="d-md-none">
+          <img src="./images/gift-voucher-img.png" class="coupon-feature-img w-100" />
+        </div>
+        <div>
+          <button type="button" class="custom-button" data-toggle="modal" data-target="#couponModal">
+            Redeem Coupon
+          </button>
+          <div class="modal fade" id="couponModal" tabindex="-1" aria-labelledby="couponModalLabel" aria-hidden="true">
+            <div class="modal-dialog mt-5">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title coupon-feature-section-modal-title" id="couponModalLabel">
+                    Coupon Code
+                  </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src="./images/thanking-customers-section-img.png" class="w-100" />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-5 order-2 order-md-2">
+        <div class="text-center">
+          <img src="./images/free-slot-booking-img.png" class="coupon-feature-img w-100" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="follow-us-section-heading">Follow Us</h1>
+          </div>
+          <div class="col-12">
+            <div class="d-flex flex-row justify-content-center">
+              <div class="follow-us-icon-container">
+                <i class="fab fa-twitter icon"></i>
+              </div>
+              <div class="follow-us-icon-container">
+                <i class="fab fa-instagram icon"></i>
+              </div>
+              <div class="follow-us-icon-container">
+                <i class="fab fa-facebook icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <img
+              src="./WhatsApp Image 2024-08-08 at 10.56.16 PM.jpeg"
+              class="rbk-logo"
+            />
+            <h1 class="footer-section-mail-id">smartparking@gmail.com</h1>
+            <p class="footer-section-address">
+              New Delhi, India.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
